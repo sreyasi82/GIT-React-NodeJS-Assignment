@@ -1,0 +1,38 @@
+
+#outer-container {
+    background-color: rgb(244, 191, 226);
+}
+
+#header_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    border-bottom: solid grey;
+    background-color: rgb(174, 227, 196);
+}
+.nav_bar{
+    display: flex; 
+    flex-wrap: nowrap;          
+    width: 100%;     
+}
+
+.logo_detail{
+    display: flex;
+    justify-content:flex-start; 
+    align-self: flex-start;   
+    height: '20px';
+    left: 20px;
+}
+
+.nav_menu_detail{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center; 
+    width: 80%;  
+}
+
+img {
+     height: '80px';
+     width: '80px';
+}
