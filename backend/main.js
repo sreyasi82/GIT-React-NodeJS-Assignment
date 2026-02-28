@@ -6,6 +6,7 @@ let express = require("express");
 let path = require("path");
 const cors = require("cors");
 let todoRouter = require("./router/todosRouting");
+let { readFromDbByDate } = require("./controllers/dbHandling");
 let app = express();
 //to read static htmlpage with proper path name
 app.use(express.static(path.join (__dirname, "public")));
@@ -27,6 +28,12 @@ app.get("/", (req, res, next)=>{
     console.log("Welcome to RESTAPI-NODE-Prject");
     //Should show some text when html page is missing 
     res.status(200).send(intro_text);
+})
+//starting with 'GET /' request
+app.get("/calendar", (req, res, next)=>{
+    console.log("Welcome to Calender View");
+    //call DB function from here
+    readFromDbByDate(req, res);
 })
 
 // export app for use in server.js and for all routers

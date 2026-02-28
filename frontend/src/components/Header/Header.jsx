@@ -5,12 +5,11 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import "./Header.css" ;
 
-
 let Header = () => {
 	return(
       <>        
-            <Navbar className="bg-body-tertiary justify-content-center header_container" >
-                <Container>
+            <Navbar className="bg-body-tertiary justify-content-center header_container" id="outer-container" >
+                <Container id="header_container">
                     <Navbar.Brand href="/home">
                         <img
                         src={logo}
@@ -24,18 +23,19 @@ let Header = () => {
                         <Nav.Link href="/home">Home</Nav.Link>                    
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="/Todos">Task list</Nav.Link>
+                        <Nav.Link href="/todos">Task list</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="link-2">Calender View</Nav.Link>
+                        <Nav.Link href="/calendar">Calender View</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link eventKey="disabled" disabled>Help</Nav.Link>
+                        <Nav.Link href="/help">Help</Nav.Link>
                     </Nav.Item>
                 </Container>
             </Navbar>        
       </>  
     );
 }
+
 
 export default Header;

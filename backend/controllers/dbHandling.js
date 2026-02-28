@@ -95,6 +95,49 @@ const  readFromDbById = async(req, res)=> {
             res.status(467).send('Facing problem with the data fetching');            
         }
 }
+/**********************************************/
+/* Function name: readFromDbByDate            */
+/* parameter: 1) req - request parameter used */
+/*              in http GET request           */
+/*           2) res - response parameter used */
+/*              in http GET request           */
+/*Description: This function is invoked when  */
+/*                                            */
+/*           GET(/todos) requests are handled*/
+/**********************************************/
+const  readFromDbByDate = async(req, res)=> {
+    console.log("fetch all data for the Task table ");
+    task_id = req.param_id;
+    console.log("task_id:",task_id);
+    let data = {tasks: []};
+    //res.set('content-type', 'application/json')
+    // Selects a table named Task and returns the rows the has the users 
+    try{
+        //db.all(`SELECT * FROM Task WHERE user_id = ${user_id}`, [], (err, rows) => {
+        db.all(`SELECT * FROM Task ORDER BY target_date ASC`, [], (err, rows) => {
+            if(err){
+                throw err;
+            }
+            rows.forEach((row)=>{
+                data.tasks.push({id: row.id, 
+                    description: row.description, 
+                    priority: row.priority, 
+                    status: row.status, 
+                    target_date: row.target_date, 
+                    user_id: row.user_id});
+            });
+            let reply_data = JSON.stringify(data);
+            console.log(reply_data);
+            res.status(200).send(reply_data);
+        });
+    }
+    catch(err){
+            console.log(err);
+            //467 - indicates problem with the data fetching
+            res.status(467).send('Facing problem with the data fetching');
+            
+        }
+}
 
 /**********************************************/
 /* Function name: writeToDb                   */
@@ -118,8 +161,10 @@ const  writeToDb = (req, res)=> {
     try{
         let newId ;   
         db.run(sql,[newId, req.body.description, req.body.priority, req.body.status, req.body.target_date, req.body.user_id], function(err){
-            if(err)
+            if(err){
+                res.status(468).send('Id or the data format is not correct...please check');
                 throw err;
+            }
 
             newId = this.lastID;//provide auto-increment to id     
             let data = {status:201, message:`New task with id ${newId} inserted.`};
@@ -239,6 +284,7 @@ const deleteFromDbById = async (req, res) =>{
 module.exports = {
   readFromDb,
   readFromDbById,
+  readFromDbByDate,
   writeToDb,
   updateDbById,
   deleteFromDbById
