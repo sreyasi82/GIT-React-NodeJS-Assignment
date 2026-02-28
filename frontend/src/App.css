@@ -55,7 +55,7 @@ body{
   top:15%;
   width: 200px;
   height: 700px;
-  background-color: rgb(174, 227, 196);
+  background: linear-gradient(180deg, #a4e1b2 10%, #ffffff 100%);
   justify-content:flex-start;
   align-items: center;
 }

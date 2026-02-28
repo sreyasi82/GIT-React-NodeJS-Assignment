@@ -1,5 +1,6 @@
 #calendar-list {
     display: flex;
+    flex: 1 1 600px;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
@@ -13,4 +14,8 @@
 
 .calendar-table-header {
     background-color: rgb(212, 227, 182);
+}
+
+.calendar-table-body {
+    background: linear-gradient(180deg, #b1d9f0 10%, #ffffff 100%);
 }

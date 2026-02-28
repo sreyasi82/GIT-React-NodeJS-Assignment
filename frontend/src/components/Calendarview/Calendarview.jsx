@@ -36,7 +36,7 @@ function Calendarview(){
                 <h3 className='calendar-table-header'>{date}</h3>
                 {tasksForDate.map(task => (
                     <Card style={{ width: '18rem' }}>
-                        <Card.Body key={task.id}>
+                        <Card.Body key={task.id} className='calendar-table-body'>
                             <Card.Title>Task {task.id}</Card.Title>
                             <Card.Text>
                                 Description: {task.description}                                             

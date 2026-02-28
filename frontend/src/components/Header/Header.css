@@ -8,7 +8,7 @@
     flex-wrap: wrap;
     justify-content:space-around;
     border-bottom: solid grey;
-    background-color: rgb(174, 227, 196);
+    background: linear-gradient(180deg, #a4e1b2 10%, #ffffff 100%);
 }
 .nav_bar{
     display: flex; 

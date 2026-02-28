@@ -8,10 +8,7 @@ import EditTask from './components/EditTask/EditTask';
 import { Link, BrowserRouter, Routes, Route } from 'react-router-dom';
 import GetTaskId from './components/GetTaskId/GetTaskId';
 import Help from './components/Help/Help';
-<<<<<<< HEAD
 import Calendarview from './components/Calendarview/Calendarview';
-=======
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
 
 function App() {
     
@@ -40,10 +37,7 @@ function App() {
         <Route path='/todos/:id' element={<TodoItem/>}></Route>    
         <Route path='/update/:id' element={<EditTask/>}></Route>    
         <Route path='/help' element={<Help/>}></Route>    
-<<<<<<< HEAD
         <Route path='/calendar' element={<Calendarview/>}></Route>    
-=======
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
         
       </Routes>
     </BrowserRouter>

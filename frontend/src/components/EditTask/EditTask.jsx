@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-<<<<<<< HEAD
 import { useParams } from 'react-router-dom';
-=======
-import { Link, useParams } from 'react-router-dom';
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import './EditTask.css'
@@ -44,7 +40,6 @@ function EditTask(){
             getDatafromDB();
     },[id]);
 
-<<<<<<< HEAD
     const handleEditSubmit = async(e) => {
         e.preventDefault();
         const reply_data = {        
@@ -60,17 +55,6 @@ function EditTask(){
             console.log(res);
             alert(`Task ${id} upadted successfully`);
             navigate('/todos/');
-=======
-    function handleEditSubmit(e){
-        e.preventDefault();
-        editedTask.id = id;
-        console.log("editedTask data after updation:", editedTask);        
-        axios.put(`http://localhost:8001/todos/${id}`, editedTask)
-        .then((res)=> { 
-            console.log(res);
-            navigate('/todos/');
-            //Refresh();
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
         })
         .catch((err)=>console.log(err))
     }
@@ -78,28 +62,16 @@ function EditTask(){
         return(
             <div className="edittask_form">
                 <div className='title'>
-<<<<<<< HEAD
                     <h3>Update Task ${id}</h3>
-=======
-                    <h3>Update Task</h3>
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                 </div>                    
                 <form onSubmit={handleEditSubmit} >
                     <div className="mb-3">
                         <label htmlFor="description">Description</label>
-<<<<<<< HEAD
                         <input defaultValue={editedTask.description} type='text' id='description' name='description' onChange={(e) => setEditedTask({...editedTask, description: e.target.value})}/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="priority">Priority</label>
                         <select id='priority' name='priority' value={editedTask.priority} onChange={(e) => setEditedTask({...editedTask, priority: e.target.value})}>
-=======
-                        <input defaultValue={editedTask.description} type='text' id='description' name='description' onChange={(e) => setEditedTask([{editedTask, description: e.target.value}])}/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="priority">Priority</label>
-                        <select id='priority' name='priority' defaultValue={editedTask.priority} onChange={(e) => setEditedTask([{editedTask, priority: e.target.value}])}>
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                             <option value="">-- Select an option --</option>
                             <option value="High">High</option>
                             <option value="Medium">Medium</option>
@@ -108,36 +80,20 @@ function EditTask(){
                     </div>
                     <div className="mb-3">
                         <label htmlFor="status">Status</label>
-<<<<<<< HEAD
                         <select id='status' name='status' value={editedTask.status} onChange={(e) => setEditedTask({...editedTask, status: e.target.value})}>                                
                             <option value="">-- Select an option --</option>
                             <option value="Scheduled">Scheduled</option>
                             <option value="In Progress">In progress</option>
                             <option value="Completed">Completed</option>
-=======
-                        <select id='status' name='status' defaultValue={editedTask.status} onChange={(e) => setEditedTask([{editedTask, status: e.target.value}])}>                                
-                            <option value="">-- Select an option --</option>
-                            <option value="scheduled">Scheduled</option>
-                            <option value="inProgress">In progress</option>
-                            <option value="completed">Completed</option>
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                         </select>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="target_date">Target Date</label>
-<<<<<<< HEAD
                         <input type='date' name='target_date' defaultValue={editedTask.target_date} id='target_date' onChange={(e) => setEditedTask({...editedTask, target_date: e.target.value})}/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="user_id">Asignee</label>
                         <input type='text' name='user_id' id='user_id' defaultValue={editedTask.user_id} onChange={(e) => setEditedTask({...editedTask, user_id: e.target.value})}/>
-=======
-                        <input type='date' name='target_date' defaultValue={editedTask.target_date} id='target_date' onChange={(e) => setEditedTask([{editedTask, target_date: e.target.value}])}/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="user_id">Asignee</label>
-                        <input type='text' name='user_id' id='user_id' defaultValue={editedTask.user_id} onChange={(e) => setEditedTask([{editedTask, user_id: e.target.value}])}/>
->>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                     </div>
                     <div className='footer mb-3'>
                         <Button variant="info" type='submit' >Update</Button>
