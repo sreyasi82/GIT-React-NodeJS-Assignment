@@ -95,6 +95,7 @@ const  readFromDbById = async(req, res)=> {
             res.status(467).send('Facing problem with the data fetching');            
         }
 }
+<<<<<<< HEAD
 /**********************************************/
 /* Function name: readFromDbByDate            */
 /* parameter: 1) req - request parameter used */
@@ -138,6 +139,8 @@ const  readFromDbByDate = async(req, res)=> {
             
         }
 }
+=======
+>>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
 
 /**********************************************/
 /* Function name: writeToDb                   */
@@ -284,7 +287,10 @@ const deleteFromDbById = async (req, res) =>{
 module.exports = {
   readFromDb,
   readFromDbById,
+<<<<<<< HEAD
   readFromDbByDate,
+=======
+>>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
   writeToDb,
   updateDbById,
   deleteFromDbById

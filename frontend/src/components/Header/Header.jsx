@@ -26,7 +26,11 @@ let Header = () => {
                         <Nav.Link href="/todos">Task list</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
+<<<<<<< HEAD
                         <Nav.Link href="/calendar">Calender View</Nav.Link>
+=======
+                        <Nav.Link href="/calenderview">Calender View</Nav.Link>
+>>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link href="/help">Help</Nav.Link>

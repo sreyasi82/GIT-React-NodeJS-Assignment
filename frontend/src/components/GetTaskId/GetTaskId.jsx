@@ -17,10 +17,13 @@ const GetTaskId = ({ action, closeModal }) => {
               <button className='btn btn-sm btn-success' 
                       onClick={(e)=>{
                           e.preventDefault();
+<<<<<<< HEAD
                           if(taskId === 0 || taskId == null){
                             alert("Please enter valid ID");
                             return;
                           }
+=======
+>>>>>>> d39596083d1937700d85e0358818235ae54e9c7a
                           closeModal(false);
                           try{
                             navigate(`/${action}/${taskId}`);
